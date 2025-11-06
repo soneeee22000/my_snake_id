@@ -1,0 +1,22 @@
+# Core
+torch>=2.2.0
+torchvision>=0.17.0
+numpy>=1.23
+pillow>=10.0.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+tqdm>=4.66.0
+
+# Inference
+onnx>=1.15.0
+onnxruntime>=1.18.0
+onnxruntime-tools==1.7.0
+
+# API / App
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+
+# Utility
+requests>=2.31.0
+imagehash>=4.3.1
