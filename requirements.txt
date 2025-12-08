@@ -11,6 +11,7 @@ tqdm>=4.66.0
 onnx>=1.15.0
 onnxruntime>=1.18.0
 onnxruntime-tools==1.7.0
+onnxscript==0.5.6
 
 # API / App
 fastapi>=0.110.0

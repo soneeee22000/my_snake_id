@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake Safety Dashboard</title>
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+    <style>
+        body { font-family: Arial; margin: 40px; background: #f4f4f4; }
+        .card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+        .danger { color: red; font-weight: bold; }
+        .safe { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>🐍 Snake Safety Dashboard</h1>
+
+<div class="card">
+    <h2>Prediction Overview</h2>
+    <p><strong>Species:</strong> {{ data.species_name }}</p>
+    <p>
+        <strong>Model Confidence:</strong>
+        {{ (data.model_confidence * 100)|round(1) }}%
+    </p>
+
+    {% if data.model_confidence < 0.75 %}
+        <p class="danger">⚠ Low Confidence — {{ data.fallback_message }}</p>
+    {% else %}
+        <p class="safe">✔ High Confidence</p>
+    {% endif %}
+</div>
+
+<div class="card">
+    <h2>Region Check</h2>
+    {% if data.region_safe %}
+        <p class="safe">This species is found in your region.</p>
+    {% else %}
+        <p class="danger">⚠ Species not typically found in your region.</p>
+    {% endif %}
+</div>
+
+<div class="card">
+    <h2>First Aid Safety Card</h2>
+    <ul>
+        {% for tip in data.first_aid %}
+        <li>{{ tip }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>

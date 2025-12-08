@@ -1,0 +1,10 @@
+{
+  "idx_to_class": {
+    "0": "Naja_kaouthia",
+    "1": "Python_bivittatus"
+  },
+  "class_to_idx": {
+    "Naja_kaouthia": 0,
+    "Python_bivittatus": 1
+  }
+}
