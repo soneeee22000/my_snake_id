@@ -1,0 +1,22 @@
+{
+  "Python bivittatus": {
+    "description": "This species is also known as the Burmese Python...",
+    "actions": [
+      "Stay calm.",
+      "Move away slowly.",
+      "Call emergency services."
+    ],
+    "donts": [
+      "Don't attempt to catch it.",
+      "Don't make sudden movements."
+    ],
+    "emergency": "If bitten, seek immediate medical attention."
+  },
+
+  "Malayopython reticulatus": {
+    "description": "The reticulated python is a large constrictor...",
+    "actions": ["Step 1", "Step 2"],
+    "donts": ["Avoid this", "Avoid that"],
+    "emergency": "Emergency instructions..."
+  }
+}
