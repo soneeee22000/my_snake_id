@@ -38,7 +38,7 @@ def download_species_images(species_name: str, out_dir: str, max_photos=200):
     save_dir = os.path.join(out_dir, folder_name)
     os.makedirs(save_dir, exist_ok=True)
 
-    print(f"\n🔍 Searching iNaturalist for: {species_name}")
+    print(f"\nSearching iNaturalist for: {species_name}")
 
     page = 1
     downloaded = 0
@@ -55,7 +55,7 @@ def download_species_images(species_name: str, out_dir: str, max_photos=200):
             data = urllib.request.urlopen(url).read()
             data = json.loads(data)
         except (HTTPError, URLError):
-            print(f"⚠️ Failed to fetch page {page} for {species_name}")
+            print(f"Failed to fetch page {page} for {species_name}")
             break
 
         results = data.get("results", [])
@@ -115,10 +115,10 @@ def main():
             count = download_species_images(species, output_dir)
 
             if count == 0:
-                print(f"❌ No images found for {species}")
+                print(f"No images found for {species}")
                 missing_species.append(species)
             else:
-                print(f"✅ Downloaded {count} images for {species}")
+                print(f"Downloaded {count} images for {species}")
 
             download_report.append([species, count])
 
@@ -131,7 +131,7 @@ def main():
         writer.writerow(["Species", "DownloadedImages"])
         writer.writerows(download_report)
 
-    print("\n📄 Finished downloading!")
+    print("\nFinished downloading!")
     print(" - missing_species.txt created")
     print(" - download_report.csv created")
 

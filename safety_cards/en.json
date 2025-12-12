@@ -1,22 +1,1129 @@
 {
   "Python bivittatus": {
-    "description": "This species is also known as the Burmese Python...",
-    "actions": [
-      "Stay calm.",
-      "Move away slowly.",
-      "Call emergency services."
-    ],
-    "donts": [
-      "Don't attempt to catch it.",
-      "Don't make sudden movements."
-    ],
-    "emergency": "If bitten, seek immediate medical attention."
+    "venom_status": "non-venomous",
+    "description": "Large constrictor commonly called Burmese python; kills by constriction, not venom.",
+    "danger_level": "low",
+    "identification_tips": ["Large size and heavy body", "Distinct patterned blotches", "Non-venomous head shape, no raised hood"],
+    "recommended_actions": ["Keep a safe distance", "Do not provoke or corner it", "Allow it to move away or contact local wildlife rescue"],
+    "donts": ["Do not attempt to catch or handle", "Do not poke or throw objects at it", "Do not separate from young if found with them"],
+    "first_aid": ["If bitten: wash wound with soap and water", "Apply clean dressing", "Seek medical attention if puncture wounds are severe or show infection"],
+    "emergency": "If severe injury occurs (deep bites, bleeding), seek medical care.",
+    "fallback_protocol": "If model confidence is low → keep distance, treat incident as potentially dangerous, call local authorities/wildlife rescue."
+  },
+
+  "Python molurus": {
+    "venom_status": "non-venomous",
+    "description": "Indian/Burmese type python complex; large constrictor similar to P. bivittatus.",
+    "danger_level": "low",
+    "identification_tips": ["Large robust body", "Patterned dorsal markings", "No hood or venom glands"],
+    "recommended_actions": ["Back away slowly", "Avoid sudden movements", "Notify wildlife control if in inhabited area"],
+    "donts": ["Don't attempt to capture", "Don't approach juveniles", "Don't feed or corner it"],
+    "first_aid": ["Clean bite wounds", "Control bleeding with direct pressure if needed", "Seek clinic for wound check"],
+    "emergency": "Seek medical attention if bleeding is severe or bite is deep.",
+    "fallback_protocol": "If confidence < threshold → assume potential hazard, keep safe distance, call help."
   },
 
   "Malayopython reticulatus": {
-    "description": "The reticulated python is a large constrictor...",
-    "actions": ["Step 1", "Step 2"],
-    "donts": ["Avoid this", "Avoid that"],
-    "emergency": "Emergency instructions..."
+    "venom_status": "non-venomous",
+    "description": "Reticulated python: very large constrictor with distinctive reticulated pattern.",
+    "danger_level": "low",
+    "identification_tips": ["Elongated body with reticulated pattern", "Large adult size", "No hood"],
+    "recommended_actions": ["Maintain distance", "Do not attempt restraint", "Contact local wildlife services for removal"],
+    "donts": ["Do not try to capture or kill", "Do not climb on it", "Don't crowd or block its escape route"],
+    "first_aid": ["For any bite: wash, apply dressing", "Control bleeding and immobilize limb", "Consult healthcare provider for wound care"],
+    "emergency": "Seek urgent care for deep puncture wounds or severe bleeding.",
+    "fallback_protocol": "If uncertain → keep distance and call authorities; treat situation as potentially hazardous."
+  },
+
+  "Naja kaouthia": {
+    "venom_status": "venomous",
+    "description": "Monocled cobra — medically significant neurotoxic venom; regional species in Myanmar.",
+    "danger_level": "deadly",
+    "identification_tips": ["Raised hood when threatened", "Monocle-shaped hood mark", "Smooth scales, slender neck"],
+    "recommended_actions": ["Keep extremely wide distance", "Do not provoke or attempt to handle", "Call emergency services immediately if bite occurs"],
+    "donts": ["Do not try to capture, kill, or approach the snake", "Do not apply tourniquets or cut the wound", "Do not try to suck out venom"],
+    "first_aid": ["Keep the patient calm and still", "Immobilize the bitten limb with a splint", "Remove constricting jewelry or clothing near bite site"],
+    "emergency": "Seek immediate professional medical care; antivenom may be required.",
+    "fallback_protocol": "If model confidence is low → assume venomous and follow emergency protocol above."
+  },
+
+  "Naja mandalayensis": {
+    "venom_status": "venomous",
+    "description": "Mandalay cobra — a regional cobra species with neurotoxic venom; medically important.",
+    "danger_level": "deadly",
+    "identification_tips": ["Hood present when threatened", "Typical cobra posture", "Regional occurrence info useful"],
+    "recommended_actions": ["Keep far away and observe safely", "Do not provoke", "Call emergency services if bite occurs"],
+    "donts": ["Do not apply traditional remedies (cutting/sucking)", "Do not use tight tourniquets", "Don't try to catch it"],
+    "first_aid": ["Calm and immobilize patient", "Keep bitten limb at neutral position", "Get to medical facility immediately"],
+    "emergency": "Immediate hospital attention for antivenom and supportive care.",
+    "fallback_protocol": "Low confidence → treat as venomous and activate emergency pathway."
+  },
+
+  "Ophiophagus hannah": {
+    "venom_status": "venomous",
+    "description": "King cobra — very large elapid with potent neurotoxic venom; highly dangerous.",
+    "danger_level": "deadly",
+    "identification_tips": ["Very large size", "Long hood and raised posture", "Distinctive head and neck profile"],
+    "recommended_actions": ["Evacuate area calmly", "Do not attempt to approach or handle", "Call wildlife control and emergency services"],
+    "donts": ["Do not attempt capture or kill", "Do not use tourniquets or cuts", "Don't delay seeking medical care if bitten"],
+    "first_aid": ["Keep patient still and calm", "Immobilize limb with splint", "Transport rapidly to hospital for antivenom"],
+    "emergency": "Immediate hospital transfer; antivenom and airway support may be needed.",
+    "fallback_protocol": "If uncertain → treat as highly dangerous; follow emergency first-aid and seek urgent care."
+  },
+
+  "Bungarus fasciatus": {
+    "venom_status": "venomous",
+    "description": "Banded krait — elapid with potent neurotoxins; dangerous, often nocturnal.",
+    "danger_level": "deadly",
+    "identification_tips": ["Distinctive alternating black and yellow bands", "Slender body, smooth scales", "No hood"],
+    "recommended_actions": ["Keep distance at night-time sightings", "Avoid handling or provoking", "Call medical services if bite occurs"],
+    "donts": ["Do not try to capture", "Do not apply traditional first-aid (cutting/sucking)", "Don't rely on home remedies"],
+    "first_aid": ["Keep patient calm and immobile", "Immobilize bitten limb", "Transport to hospital urgently"],
+    "emergency": "Rapid hospital care and antivenom may be required.",
+    "fallback_protocol": "Low model confidence → assume venomous, follow emergency protocol."
+  },
+
+  "Bungarus caeruleus": {
+    "venom_status": "venomous",
+    "description": "Common krait — highly venomous elapid; bites often occur at night and may be painless initially.",
+    "danger_level": "deadly",
+    "identification_tips": ["Dark, often bluish-black body", "Slim, smooth scales", "No hood; nocturnal behavior"],
+    "recommended_actions": ["Avoid walking barefoot at night", "Keep patient still if bitten", "Seek medical care immediately"],
+    "donts": ["Do not delay medical treatment because bite may be painless early", "Don't apply tourniquets or incisions", "Don't give oral substances if unconscious"],
+    "first_aid": ["Immobilize limb and keep patient calm", "Do not allow patient to walk", "Transport to hospital quickly"],
+    "emergency": "Immediate hospital evaluation; antivenom likely required.",
+    "fallback_protocol": "If confidence low → treat as highly dangerous and follow hospital referral."
+  },
+
+  "Bungarus niger": {
+    "venom_status": "venomous",
+    "description": "Black krait species — elapid with potent neurotoxic venom; medically significant.",
+    "danger_level": "deadly",
+    "identification_tips": ["Uniformly dark/black coloration", "Slender body", "No hood"],
+    "recommended_actions": ["Avoid contact, especially at night", "Keep patient still if bitten", "Get to medical care immediately"],
+    "donts": ["Do not attempt capture or local remedies", "Do not use tourniquets", "Don't let the patient walk to hospital"],
+    "first_aid": ["Immobilize the limb", "Remove tight clothing or jewelry", "Evacuate to medical facility ASAP"],
+    "emergency": "Urgent medical treatment and antivenom likely necessary.",
+    "fallback_protocol": "Low confidence → follow emergency/antivenom pathway."
+  },
+
+  "Bungarus lividus": {
+    "venom_status": "venomous",
+    "description": "A krait species with neurotoxic venom; handle as highly dangerous.",
+    "danger_level": "deadly",
+    "identification_tips": ["Color variations depending on region", "Slender body", "Smooth scales"],
+    "recommended_actions": ["Keep clear of snake, especially at night", "Immobilize patient if bitten", "Seek hospital care quickly"],
+    "donts": ["Don't attempt to handle", "Don't cut or suck wound", "Do not delay transport to clinic"],
+    "first_aid": ["Calm and immobilize patient", "Clean minor wounds with water", "Transport urgently for antivenom"],
+    "emergency": "Rapid hospital transfer required.",
+    "fallback_protocol": "If uncertain → assume high danger and follow emergency steps."
+  },
+
+  "Bungarus candidus": {
+    "venom_status": "venomous",
+    "description": "Malayan krait (or related) — banded/striped krait with potent neurotoxin; dangerous.",
+    "danger_level": "deadly",
+    "identification_tips": ["Light banding on dark body", "No hood; slender", "Often nocturnal"],
+    "recommended_actions": ["Avoid night-time exposure", "Immobilize limb if bitten", "Seek immediate medical care"],
+    "donts": ["Do not cut or suck the bite", "Do not use home remedies", "Do not let patient move unnecessarily"],
+    "first_aid": ["Keep patient still", "Immobilize limb", "Transport to hospital promptly"],
+    "emergency": "Immediate hospital care and antivenom treatment likely needed.",
+    "fallback_protocol": "Low model confidence → default to venomous treatment protocol."
+  },
+
+  "Bungarus magnimaculatus": {
+    "venom_status": "venomous",
+    "description": "Krait species with neurotoxic venom; treat as highly dangerous.",
+    "danger_level": "deadly",
+    "identification_tips": ["Distinctive patterning compared to other kraits", "Slender body", "Smooth scales"],
+    "recommended_actions": ["Avoid contact", "If bitten immobilize patient", "Seek urgent medical attention"],
+    "donts": ["Do not attempt to capture or kill", "Do not apply traditional first-aid", "Don't delay hospital transfer"],
+    "first_aid": ["Keep calm and immobilize limb", "Remove constricting items", "Get to emergency care immediately"],
+    "emergency": "Hospital care and antivenom may be needed.",
+    "fallback_protocol": "If confidence low → treat as krait bite and escalate to emergency services."
+  },
+
+  "Bungarus wanghaotingi": {
+    "venom_status": "venomous",
+    "description": "A krait species; neurotoxic and medically significant.",
+    "danger_level": "deadly",
+    "identification_tips": ["Krait-like banding or dark coloration", "Slender hoodless profile", "Nocturnal tendencies"],
+    "recommended_actions": ["Keep distance", "Immobilize and seek care if bitten", "Contact emergency services"],
+    "donts": ["No field remedies", "Do not cut/suck the bite", "Avoid movement of the patient"],
+    "first_aid": ["Immobilize limb with splint", "Keep patient calm", "Transport urgently to hospital"],
+    "emergency": "Immediate medical attention required.",
+    "fallback_protocol": "Low confidence → assume severe envenomation risk and seek urgent care."
+  },
+
+  "Bungarus slowinskii": {
+    "venom_status": "venomous",
+    "description": "Krait species; neurotoxic venom potential — treat as dangerous.",
+    "danger_level": "deadly",
+    "identification_tips": ["Typical krait body shape", "Regional patterning", "No hood"],
+    "recommended_actions": ["Avoid contact", "If bitten immobilize limb", "Seek emergency help immediately"],
+    "donts": ["Do not apply tourniquet", "Do not incise bite", "Don't delay transport"],
+    "first_aid": ["Keep patient calm and still", "Splint and immobilize limb", "Move to nearest medical facility"],
+    "emergency": "Hospital treatment and antivenom may be necessary.",
+    "fallback_protocol": "If uncertain → treat as krait and escalate."
+  },
+
+  "Banded krait": {
+    "venom_status": "venomous",
+    "description": "Common name for species like Bungarus fasciatus — banded elapid with powerful neurotoxin.",
+    "danger_level": "deadly",
+    "identification_tips": ["Alternating black and yellow bands", "Smooth scales", "No hood"],
+    "recommended_actions": ["Keep distance and do not disturb", "Immobilize patient if bitten", "Call emergency services"],
+    "donts": ["Don't try to catch or kill", "Don't cut or suck the wound", "Don't use tourniquets"],
+    "first_aid": ["Calm patient, immobilize limb", "Remove tight clothing/jewelry", "Transport to hospital urgently"],
+    "emergency": "Immediate hospital assessment for antivenom and supportive care.",
+    "fallback_protocol": "If confidence low → follow venomous emergency steps."
+  },
+
+  "Calliophis macclellandi": {
+    "venom_status": "venomous",
+    "description": "Coral snake species or coral-like elapid with potent venom; medically important.",
+    "danger_level": "deadly",
+    "identification_tips": ["Bright contrasting colors, often red/black/white", "Slender body", "Small head but highly venomous"],
+    "recommended_actions": ["Do not handle", "Keep patient calm if bitten", "Get to medical care immediately"],
+    "donts": ["Do not attempt to treat bite yourself", "Do not cut or suck", "Don't apply ice or untested remedies"],
+    "first_aid": ["Keep patient still and calm", "Immobilize the limb", "Seek urgent medical attention"],
+    "emergency": "Emergency medical treatment; antivenom may be required.",
+    "fallback_protocol": "Model low confidence → treat as venomous coral snake and seek urgent care."
+  },
+
+  "Calliophis bivirgata": {
+    "venom_status": "venomous",
+    "description": "Blue coral snake — highly venomous with potent neurotoxic/hemotoxic effects.",
+    "danger_level": "deadly",
+    "identification_tips": ["Bright blue body with red head or banding in many individuals", "Slender, smooth-bodied", "Small size compared to kraits"],
+    "recommended_actions": ["Avoid any contact", "Immobilize and do not delay transport", "Call emergency services immediately"],
+    "donts": ["Do not apply tourniquet or incisions", "Do not try to catch or kill", "Don't use home remedies"],
+    "first_aid": ["Calm and immobilize the patient", "Keep limb immobilized and at neutral position", "Immediate transfer to hospital"],
+    "emergency": "Immediate specialized medical care likely required.",
+    "fallback_protocol": "If confidence < threshold → default to coral-snake emergency protocol."
+  },
+
+  "Ptyas mucosa": {
+    "venom_status": "non-venomous",
+    "description": "Rat snake (Indian rat snake) — fast, non-venomous, commonly found near human habitations.",
+    "danger_level": "low",
+    "identification_tips": ["Long slender body, agile", "Usually olive-brown with lighter belly", "Non-venomous head shape"],
+    "recommended_actions": ["Give it space to escape", "Do not attempt to handle", "Block entry points to buildings if present"],
+    "donts": ["Don't attempt capture", "Don't provoke", "Do not try to kill on site unless necessary for safety"],
+    "first_aid": ["For bites: clean and dress wound", "Monitor for infection", "See clinic if wound is deep"],
+    "emergency": "Medical attention for wounds and tetanus status if needed.",
+    "fallback_protocol": "Low confidence → keep safe distance and follow non-venomous guidance."
+  },
+
+  "Ptyas korros": {
+    "venom_status": "non-venomous",
+    "description": "Chinese/Indochinese rat snake — non-venomous, often found near water and fields.",
+    "danger_level": "low",
+    "identification_tips": ["Long, slender with smooth scales", "Often olive/greenish dorsal color", "No hood or triangular head"],
+    "recommended_actions": ["Allow it to leave", "Avoid interaction", "Secure domestic animals if needed"],
+    "donts": ["Do not provoke or attempt handling", "Do not corner it", "Don't attempt to feed it"],
+    "first_aid": ["Clean bite and apply dressing", "Seek care if wound deep or infected", "Tetanus check if necessary"],
+    "emergency": "Seek medical care for serious wounds.",
+    "fallback_protocol": "If uncertain → maintain distance; treat as non-venomous unless signs of envenomation appear."
+  },
+
+  "Ptyas carinata": {
+    "venom_status": "non-venomous",
+    "description": "Another non-venomous rat snake species found in the region.",
+    "danger_level": "low",
+    "identification_tips": ["Slender, elongated body", "Smooth scales", "Non-venomous features"],
+    "recommended_actions": ["Give space", "Allow escape route", "Contact wildlife help if necessary"],
+    "donts": ["Don't pick up or provoke", "Don't block its escape", "Do not attempt to kill it unnecessarily"],
+    "first_aid": ["Clean and dress minor bite wounds", "Monitor for infection", "Seek medical attention if symptoms worsen"],
+    "emergency": "Medical care for significant wounds.",
+    "fallback_protocol": "Low confidence → follow non-venomous protocol and observe the patient."
+  },
+
+  "Ptyas dhumnades": {
+    "venom_status": "non-venomous",
+    "description": "Indochinese rat snake species; non-venomous and agile.",
+    "danger_level": "low",
+    "identification_tips": ["Long body, smooth scales", "Typically plain dorsal coloration", "No hood"],
+    "recommended_actions": ["Leave it be", "Ensure children/pets are kept away", "Contact wildlife authorities if in urban area"],
+    "donts": ["Do not attempt capture", "Do not corner or provoke", "Don't try to kill it"],
+    "first_aid": ["For bites: wash, dress, monitor", "Seek clinic if deep or infected", "Update tetanus if needed"],
+    "emergency": "Seek care for deep punctures or signs of infection.",
+    "fallback_protocol": "Low confidence → treat as non-venomous with caution."
+  },
+
+  "Ahaetulla prasina": {
+    "venom_status": "mildly venomous",
+    "description": "Oriental whip snake (green vine snake) — mildly venomous rear-fanged species, usually not life-threatening.",
+    "danger_level": "moderate",
+    "identification_tips": ["Thin green vine-like body", "Pointed snout and large eyes", "Often found on vegetation"],
+    "recommended_actions": ["Do not try to catch", "Keep distance and discourage pets/children", "Allow it to move away"],
+    "donts": ["Do not handle without expertise", "Do not provoke", "Don't assume it is harmless if bitten"],
+    "first_aid": ["Wash wound with soap and water", "Apply clean dressing", "Monitor for local swelling; seek medical advice if symptoms progress"],
+    "emergency": "Seek medical evaluation if allergic reaction or progressive symptoms occur.",
+    "fallback_protocol": "If model uncertain → err on side of caution, immobilize limb and seek local medical advice."
+  },
+
+  "Ahaetulla nasuta": {
+    "venom_status": "mildly venomous",
+    "description": "Green vine snake with an elongated pointed head; rear-fanged and typically causes local symptoms.",
+    "danger_level": "moderate",
+    "identification_tips": ["Very slender bright green body", "Elongated snout", "Often found in trees and shrubs"],
+    "recommended_actions": ["Observe from distance", "Avoid handling", "Keep children and pets away"],
+    "donts": ["Don't attempt capture", "Don't provoke", "Don't use home remedies for bites"],
+    "first_aid": ["Cleanse bite site", "Apply sterile dressing", "Watch for increasing swelling or systemic signs"],
+    "emergency": "Seek medical attention for severe local reaction or systemic symptoms.",
+    "fallback_protocol": "Low confidence → treat cautiously and consult medical services."
+  },
+
+  "Ahaetulla mycterizans": {
+    "venom_status": "mildly venomous",
+    "description": "A vine snake species similar to other Ahaetulla species; rear-fanged and typically low systemic risk.",
+    "danger_level": "moderate",
+    "identification_tips": ["Thin green body", "Pointed head", "Arboreal behavior"],
+    "recommended_actions": ["Leave undisturbed", "Keep distance, especially with children", "Allow it to escape"],
+    "donts": ["Do not handle", "Do not provoke", "Don't rely on folk remedies"],
+    "first_aid": ["Wash and dress bite", "Monitor for swelling or spreading redness", "Seek medical care if symptoms worsen"],
+    "emergency": "Medical evaluation advised if systemic signs appear.",
+    "fallback_protocol": "If uncertain → immobilize and get medical advice promptly."
+  },
+
+  "Boiga cyanea": {
+    "venom_status": "mildly venomous",
+    "description": "Green cat snake / mangrove snake — rear-fanged colubrid; may cause local effects; rare systemic effects.",
+    "danger_level": "moderate",
+    "identification_tips": ["Slender, greenish to brown body", "Large eyes with vertical pupils", "Rear-fanged dentition"],
+    "recommended_actions": ["Do not attempt to handle", "Keep calm and distance", "Seek medical advice if bitten"],
+    "donts": ["Do not provoke or capture", "Don't delay medical consultation if bitten", "Avoid home remedies"],
+    "first_aid": ["Wash wound and apply sterile dressing", "Immobilize limb", "Monitor for increasing pain or swelling and seek medical review"],
+    "emergency": "See healthcare provider for wound care and observation.",
+    "fallback_protocol": "If model confidence low → advise medical review and conservative management."
+  },
+
+  "Boiga dendrophila": {
+    "venom_status": "mildly venomous",
+    "description": "Mangrove cat snake (black-and-yellow) — rear-fanged; venom usually causes local effects.",
+    "danger_level": "moderate",
+    "identification_tips": ["Bold black and yellow banding", "Slender arboreal body", "Large head relative to neck"],
+    "recommended_actions": ["Keep away and observe", "Avoid handling", "Seek medical attention if bitten"],
+    "donts": ["Do not try to capture", "Do not use unproven local treatments", "Don't leave bite untreated if symptomatic"],
+    "first_aid": ["Clean wound and apply dressing", "Immobilize the limb", "Get medical assessment for wound and possible infection"],
+    "emergency": "Medical review recommended; manage wound and monitor.",
+    "fallback_protocol": "Low confidence → treat cautiously and recommend clinical assessment."
+  },
+
+  "Boiga ochracea": {
+    "venom_status": "mildly venomous",
+    "description": "Ochraceous cat snake — rear-fanged species that may cause local symptoms.",
+    "danger_level": "moderate",
+    "identification_tips": ["Brown/ochre coloration", "Slender, arboreal form", "Large eyes"],
+    "recommended_actions": ["Avoid handling", "Observe and allow escape", "Seek medical advice if bitten"],
+    "donts": ["Do not pick up", "Don't treat bite with home remedies", "Do not delay seeking care if symptoms progress"],
+    "first_aid": ["Wash with soap and water", "Apply sterile dressing", "Monitor and consult medical care if swelling or signs of infection appear"],
+    "emergency": "Seek clinic review for symptomatic bites.",
+    "fallback_protocol": "If uncertain → follow conservative first-aid and suggest medical review."
+  },
+
+  "Boiga multifasciata": {
+    "venom_status": "mildly venomous",
+    "description": "Multi-banded cat snake — rear-fanged, typically causing local envenomation only.",
+    "danger_level": "moderate",
+    "identification_tips": ["Multiple bands across body", "Slender arboreal snake", "Large eyes"],
+    "recommended_actions": ["Do not handle", "Allow it to leave", "Seek medical advice if bitten"],
+    "donts": ["Do not attempt capture", "Do not use unverified remedies", "Don't ignore progressive symptoms"],
+    "first_aid": ["Clean and dress wound", "Immobilize limb if necessary", "Seek medical evaluation if symptoms increase"],
+    "emergency": "Medical evaluation for symptomatic bites.",
+    "fallback_protocol": "Low confidence → recommend medical assessment and conservative management."
+  },
+
+  "Boiga trigonata": {
+    "venom_status": "mildly venomous",
+    "description": "Indian gamma snake / cat snake — rear-fanged with variable local effects.",
+    "danger_level": "moderate",
+    "identification_tips": ["Triangular-patterned markings", "Slender body", "Enlarged rear teeth"],
+    "recommended_actions": ["Avoid handling", "Keep children and pets away", "Get medical review if bitten"],
+    "donts": ["Do not capture or provoke", "Do not cut or suck wound", "Don't delay seeking medical care if symptomatic"],
+    "first_aid": ["Wash wound, apply dressing", "Immobilize limb", "Seek clinical assessment if swelling or systemic signs occur"],
+    "emergency": "See a healthcare provider for wound management.",
+    "fallback_protocol": "If uncertain → advise clinic visit and conservative care."
+  },
+
+  "Boiga siamensis": {
+    "venom_status": "mildly venomous",
+    "description": "Siamese cat snake — rear-fanged and typically causes local reactions rather than life-threatening envenomation.",
+    "danger_level": "moderate",
+    "identification_tips": ["Slender arboreal body", "Patterning varies regionally", "Large eyes"],
+    "recommended_actions": ["Do not handle", "Give it room to escape", "Seek medical advice if bitten"],
+    "donts": ["Don't provoke or trap it", "Avoid home remedies", "Do not delay medical consultation for worsening symptoms"],
+    "first_aid": ["Clean wound and apply sterile dressing", "Immobilize limb", "Monitor and consult a clinician if needed"],
+    "emergency": "Medical review for symptomatic bites.",
+    "fallback_protocol": "Low confidence → recommend clinical assessment."
+  },
+
+  "Chrysopelea ornata": {
+    "venom_status": "mildly venomous",
+    "description": "Ornate flying snake — mildly venomous, capable of gliding; usually causes local effects.",
+    "danger_level": "moderate",
+    "identification_tips": ["Bright patterning with dark spots/stripes", "Slender arboreal body", "Ability to glide between trees"],
+    "recommended_actions": ["Give space", "Do not handle", "Observe until it leaves area"],
+    "donts": ["Don't attempt capture", "Do not provoke or corner", "Don't use cutting or suction on bite"],
+    "first_aid": ["Clean the bite, apply dressing", "Immobilize if necessary", "Seek medical advice if symptoms escalate"],
+    "emergency": "Seek clinic care for progressive local reaction.",
+    "fallback_protocol": "If model confidence low → advise conservative management and medical review."
+  },
+
+  "Chrysopelea paradisi": {
+    "venom_status": "mildly venomous",
+    "description": "Paradise flying snake — rear-fanged gliding snake; mild to moderate local effects possible.",
+    "danger_level": "moderate",
+    "identification_tips": ["Colorful patterned scales", "Slender body; arboreal", "Gliding behavior between trees"],
+    "recommended_actions": ["Keep distance", "Allow escape route", "Seek medical advice if bitten"],
+    "donts": ["Do not handle", "Do not provoke", "Do not use folk remedies"],
+    "first_aid": ["Wash and dress bite", "Immobilize limb", "Monitor and seek care if needed"],
+    "emergency": "Medical assessment recommended for symptomatic bites.",
+    "fallback_protocol": "Low confidence → treat conservatively and refer to clinic."
+  },
+
+  "Chrysopelea taprobanica": {
+    "venom_status": "mildly venomous",
+    "description": "Flying snake species found in South/Southeast Asia; typically mild effects.",
+    "danger_level": "moderate",
+    "identification_tips": ["Distinctive dorsal pattern", "Slender body adapted to arboreal life", "Gliding capability"],
+    "recommended_actions": ["Observe from safe distance", "Don't attempt to capture", "Keep pets/children away"],
+    "donts": ["Do not provoke", "Don't handle without expertise", "Avoid home remedies"],
+    "first_aid": ["Clean bite site", "Apply sterile dressing", "Seek medical review if symptoms worsen"],
+    "emergency": "See a healthcare professional if increasing symptoms occur.",
+    "fallback_protocol": "If uncertain → recommend medical review and conservative first-aid."
+  },
+
+  "Chrysopelea pelias": {
+    "venom_status": "mildly venomous",
+    "description": "A flying snake species with similar behavior and risk profile to other Chrysopelea.",
+    "danger_level": "moderate",
+    "identification_tips": ["Colorful patterned scales", "Arboreal and slender", "Ability to glide"],
+    "recommended_actions": ["Maintain distance", "Let it leave area", "Seek medical review if bitten"],
+    "donts": ["Do not capture", "Do not use unverified remedies", "Do not provoke the snake"],
+    "first_aid": ["Wash and dress wound", "Immobilize limb if needed", "Monitor and get clinic care if symptomatic"],
+    "emergency": "Medical assessment advised for symptomatic bites.",
+    "fallback_protocol": "Low confidence → recommend conservative care and clinic visit."
+  },
+
+  "Chrysopelea burmanica": {
+    "venom_status": "mildly venomous",
+    "description": "Regionally found flying snake similar to other Chrysopelea species; usually low systemic risk.",
+    "danger_level": "moderate",
+    "identification_tips": ["Distinct scaled patterns", "Slender arboreal body", "Gliding behavior"],
+    "recommended_actions": ["Avoid handling", "Allow escape", "Consult medical care if bit"],
+    "donts": ["Don't provoke or capture", "Don't use incisions/suction", "Don't delay care for worsening signs"],
+    "first_aid": ["Clean and dress the site", "Immobilize if necessary", "See healthcare provider if symptoms progress"],
+    "emergency": "Seek medical evaluation for significant local or systemic signs.",
+    "fallback_protocol": "If model confidence low → advise medical review."
+  },
+
+  "Dendrelaphis pictus": {
+    "venom_status": "non-venomous",
+    "description": "Painted bronzeback / tree snake — non-venomous, fast-moving and arboreal.",
+    "danger_level": "low",
+    "identification_tips": ["Slender, bronze/green back with lighter belly", "Arboreal posture", "Large eyes"],
+    "recommended_actions": ["Allow it to escape", "Keep distance", "Secure indoor areas if found inside house"],
+    "donts": ["Don't pick up or attempt to handle", "Do not provoke", "Don't corner the snake"],
+    "first_aid": ["Clean minor bites/wounds", "Monitor for infection", "Seek medical care if severe"],
+    "emergency": "Medical care for deep wounds or infection.",
+    "fallback_protocol": "Low confidence → treat as non-venomous but monitor patient."
+  },
+
+  "Dendrelaphis caudolineatus": {
+    "venom_status": "non-venomous",
+    "description": "A bronzeback species, arboreal and non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Slender body, often with stripe along flank", "Arboreal habits", "Non-venomous head shape"],
+    "recommended_actions": ["Keep distance and let it leave", "Ensure children/pets kept away", "Contact wildlife services if needed"],
+    "donts": ["Do not pick up", "Do not provoke", "Don't use home remedies if bitten"],
+    "first_aid": ["Wash and dress bite if necessary", "Monitor and seek care if wound severe", "Tetanus check as required"],
+    "emergency": "Clinic review for deep injuries.",
+    "fallback_protocol": "Low confidence → follow non-venomous guidance and observe."
+  },
+
+  "Dendrelaphis kopsteini": {
+    "venom_status": "non-venomous",
+    "description": "Tree snake species with similar profile to other Dendrelaphis species.",
+    "danger_level": "low",
+    "identification_tips": ["Slender arboreal form", "Distinctive stripe or coloration", "Large eyes"],
+    "recommended_actions": ["Give space", "Allow to leave", "Secure area if indoors"],
+    "donts": ["Do not handle", "Don't corner it", "Do not attempt to feed"],
+    "first_aid": ["Clean any wounds", "Seek care for deep punctures", "Monitor for infection"],
+    "emergency": "Seek medical attention for severe wounds.",
+    "fallback_protocol": "If uncertain → recommend monitoring and medical review if symptomatic."
+  },
+
+  "Dendrelaphis cyanochloris": {
+    "venom_status": "non-venomous",
+    "description": "A bronzeback species with bright coloration; non-venomous and arboreal.",
+    "danger_level": "low",
+    "identification_tips": ["Bright green/blue hues", "Slender body", "Arboreal habitat"],
+    "recommended_actions": ["Avoid handling", "Allow escape", "Contact wildlife control if needed"],
+    "donts": ["Do not provoke", "Do not attempt to capture", "Don't use home remedies"],
+    "first_aid": ["Wash wounds and apply dressing", "Seek care for deep wounds", "Tetanus status review if indicated"],
+    "emergency": "Clinic visit for severe injuries.",
+    "fallback_protocol": "Low confidence → follow non-venomous guidance."
+  },
+
+  "Dendrelaphis ngansonensis": {
+    "venom_status": "non-venomous",
+    "description": "A tree snake species; non-venomous and generally harmless to humans.",
+    "danger_level": "low",
+    "identification_tips": ["Slender build", "Arboreal behavior", "Distinctive stripes in some specimens"],
+    "recommended_actions": ["Observe and allow escape", "Keep children/pets away", "Call wildlife rescue if necessary"],
+    "donts": ["Do not handle", "Don't corner it", "Avoid attempts to kill"],
+    "first_aid": ["Clean bite if necessary", "Monitor for infection", "Seek medical help for severe wounds"],
+    "emergency": "Medical care for significant wounds.",
+    "fallback_protocol": "Low confidence → treat as non-venomous and monitor."
+  },
+
+  "Lycodon capucinus": {
+    "venom_status": "non-venomous",
+    "description": "Common wolf snake — non-venomous, often found near human dwellings.",
+    "danger_level": "low",
+    "identification_tips": ["Slender, often brown with light bands", "Distinct head shape", "No venomous fang structure"],
+    "recommended_actions": ["Allow it to escape", "Keep kids/pets away", "Seal house gaps if frequent sightings"],
+    "donts": ["Don't attempt capture with bare hands", "Don't provoke", "Don't kill unnecessarily"],
+    "first_aid": ["Clean any bites", "Apply dressing and monitor", "Seek care for deep or infected wounds"],
+    "emergency": "Seek clinic if severe or infected.",
+    "fallback_protocol": "Low confidence → follow non-venomous protocol."
+  },
+
+  "Lycodon aulicus": {
+    "venom_status": "non-venomous",
+    "description": "Common wolf snake species; non-venomous and often nocturnal.",
+    "danger_level": "low",
+    "identification_tips": ["Characteristic banding or pattern", "Slender body", "Non-venomous dentition"],
+    "recommended_actions": ["Do not handle", "Allow escape", "Inform local pest/wildlife control if inside house"],
+    "donts": ["Do not provoke", "Don't try to capture without tools", "Don't use home remedies for bites"],
+    "first_aid": ["Clean and dress wounds", "Monitor for infection", "Consult clinic if necessary"],
+    "emergency": "Seek medical care for severe wounds.",
+    "fallback_protocol": "If model confidence low → treat as non-venomous but monitor."
+  },
+
+  "Lycodon striatus": {
+    "venom_status": "non-venomous",
+    "description": "A wolf snake species — non-venomous with typical Lycodon behavior.",
+    "danger_level": "low",
+    "identification_tips": ["Striped patterning", "Slender form", "No large fangs"],
+    "recommended_actions": ["Give space", "Allow escape", "Close openings to dwellings if needed"],
+    "donts": ["Do not handle bare-handed", "Do not corner", "Don't attempt to kill"],
+    "first_aid": ["Wash wound, dress", "Monitor and seek care for infection", "Tetanus check if indicated"],
+    "emergency": "Medical attention for severe injuries.",
+    "fallback_protocol": "Low confidence → follow non-venomous guidance."
+  },
+
+  "Lycodon zawi": {
+    "venom_status": "non-venomous",
+    "description": "Wolf snake species found in Southeast Asia; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Slender body", "Typical Lycodon head shape", "Distinctive markings"],
+    "recommended_actions": ["Do not handle", "Encourage safe escape", "Keep pets and children away"],
+    "donts": ["Do not provoke", "Do not use folk remedies", "Do not attempt capture without expertise"],
+    "first_aid": ["Clean and dress any wounds", "Seek clinic for deep wounds", "Monitor for infection"],
+    "emergency": "Seek medical care for severe bite wounds.",
+    "fallback_protocol": "If uncertain → treat as non-venomous and monitor patient."
+  },
+
+  "Lycodon laoensis": {
+    "venom_status": "non-venomous",
+    "description": "Laotian wolf snake — non-venomous colubrid with nocturnal habits.",
+    "danger_level": "low",
+    "identification_tips": ["Slender body, nocturnal", "Light banding or spots", "Typical non-venomous head shape"],
+    "recommended_actions": ["Allow it to leave", "Block access to indoor spaces", "Contact wildlife services if necessary"],
+    "donts": ["Do not handle", "Avoid provoking", "Don't use home remedies for bites"],
+    "first_aid": ["Clean and cover wound", "Seek care for deep/infected wounds", "Update tetanus if required"],
+    "emergency": "Seek clinic care for severe wounds.",
+    "fallback_protocol": "Low confidence → follow non-venomous protocol."
+  },
+
+  "Lycodon septentrionalis": {
+    "venom_status": "non-venomous",
+    "description": "Northern wolf snake species; non-venomous and typically shy.",
+    "danger_level": "low",
+    "identification_tips": ["Slender body", "Striped or banded pattern", "Non-venomous head morphology"],
+    "recommended_actions": ["Observe and allow escape", "Remove attractants from homes", "Call wildlife control if needed"],
+    "donts": ["Don't attempt capture", "Don't provoke", "Avoid killing it"],
+    "first_aid": ["Wash and dress any minor wounds", "Seek clinic for deep wounds", "Tetanus status check as needed"],
+    "emergency": "Seek medical care for significant injuries.",
+    "fallback_protocol": "If model uncertain → treat as non-venomous and monitor."
+  },
+
+  "Lycodon fasciatus": {
+    "venom_status": "non-venomous",
+    "description": "Banded wolf snake — non-venomous with distinct banding.",
+    "danger_level": "low",
+    "identification_tips": ["Clear banding across body", "Slender form", "No large fangs"],
+    "recommended_actions": ["Keep distance", "Allow escape", "Contact wildlife services if inside homes"],
+    "donts": ["Do not handle", "Do not provoke", "Avoid killing it"],
+    "first_aid": ["Clean and dress bite wounds", "Seek medical attention for deep wounds", "Monitor for infection"],
+    "emergency": "Clinic visit for significant wounds.",
+    "fallback_protocol": "Low confidence → follow non-venomous guidance."
+  },
+
+  "Lycodon paucifasciatus": {
+    "venom_status": "non-venomous",
+    "description": "A wolf snake species with few bands; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Few bands on body", "Slender", "Non-venomous traits"],
+    "recommended_actions": ["Allow it to leave", "Avoid handling", "Keep children/pets away"],
+    "donts": ["Do not provoke", "Do not attempt capture", "Don't use unproven remedies"],
+    "first_aid": ["Clean and dress any wounds", "Seek clinic if severe", "Monitor for infection"],
+    "emergency": "Medical attention for serious punctures.",
+    "fallback_protocol": "If uncertain → treat as non-venomous with monitoring."
+  },
+
+  "Lycodon ruhstrati": {
+    "venom_status": "non-venomous",
+    "description": "Ruhstrat's wolf snake — non-venomous, generally harmless.",
+    "danger_level": "low",
+    "identification_tips": ["Characteristic scales and patterning", "Slender body", "No venomous fang structure"],
+    "recommended_actions": ["Avoid handling", "Allow escape", "Call wildlife services if intrusion occurs"],
+    "donts": ["Do not provoke", "Don't kill it", "Avoid folk first-aid methods"],
+    "first_aid": ["Clean wounds and bandage", "Seek care for deep wounds", "Tetanus check if indicated"],
+    "emergency": "Seek medical care if deep or infected.",
+    "fallback_protocol": "Low confidence → follow non-venomous plan and monitor."
+  },
+
+  "Lycodon nympha": {
+    "venom_status": "non-venomous",
+    "description": "A wolf snake species with typical non-venomous behavior.",
+    "danger_level": "low",
+    "identification_tips": ["Small to medium slender body", "Distinct patterning", "No venomous fang evidence"],
+    "recommended_actions": ["Leave it alone", "Allow escape path", "Keep pets/children away"],
+    "donts": ["Do not handle", "Don't provoke", "Don't attempt to kill"],
+    "first_aid": ["Clean wound and dress", "Monitor for infection", "Seek care if needed"],
+    "emergency": "Clinic visit for severe bites.",
+    "fallback_protocol": "If uncertain → treat as non-venomous."
+  },
+
+  "Xenochrophis piscator": {
+    "venom_status": "non-venomous",
+    "description": "Checkered keelback / water snake — non-venomous, often near water bodies.",
+    "danger_level": "low",
+    "identification_tips": ["Dorsal checkered pattern", "Associated with water", "Flattened head, non-venomous"],
+    "recommended_actions": ["Avoid handling", "Allow escape into water", "Keep away from fishing areas"],
+    "donts": ["Do not try to capture by hand", "Do not provoke", "Don't use home remedies if bitten"],
+    "first_aid": ["Clean and dress superficial wounds", "Monitor and seek clinic if infection occurs", "Tetanus check if necessary"],
+    "emergency": "Seek care for deep wounds or infection.",
+    "fallback_protocol": "Low confidence → treat as non-venomous and monitor."
+  },
+
+  "Fowlea flavipunctatus": {
+    "venom_status": "non-venomous",
+    "description": "A species of water/grass snake; non-venomous and common in wetlands.",
+    "danger_level": "low",
+    "identification_tips": ["Spotted/flanked pattern", "Found in wet habitats", "Non-venomous head shape"],
+    "recommended_actions": ["Keep distance", "Let it return to water", "Avoid disturbing habitat"],
+    "donts": ["Do not handle", "Avoid provoking", "Don't use folk remedies for bites"],
+    "first_aid": ["Wash and cover any bite", "Seek medical review for deep wounds", "Monitor for infection"],
+    "emergency": "Healthcare for serious punctures or infection.",
+    "fallback_protocol": "Low confidence → follow non-venomous guidance."
+  },
+
+  "Fowlea melanzoster": {
+    "venom_status": "non-venomous",
+    "description": "A grass/water snake species; non-venomous and typically harmless.",
+    "danger_level": "low",
+    "identification_tips": ["Dark/dorsal coloring", "Common near water bodies", "Slender body"],
+    "recommended_actions": ["Observe and give space", "Allow to leave", "Limit access of pets/children"],
+    "donts": ["Do not attempt capture", "Do not kill", "Don't use home remedies if bitten"],
+    "first_aid": ["Clean and dress wounds", "Seek care for deep or infected wounds", "Monitor tetanus status"],
+    "emergency": "Medical attention for severe wounds.",
+    "fallback_protocol": "If uncertain → treat as non-venomous and monitor patient."
+  },
+
+  "Amphiesma stolatum": {
+    "venom_status": "non-venomous",
+    "description": "Common keelback — non-venomous colubrid, often found in grasslands and near water.",
+    "danger_level": "low",
+    "identification_tips": ["Long slender body with stripes", "Keel-like scales", "Found in grassy/wet areas"],
+    "recommended_actions": ["Do not handle", "Allow escape", "Keep area clear of children/pets"],
+    "donts": ["Do not try to capture with bare hands", "Do not provoke", "Avoid killing it"],
+    "first_aid": ["Wash and dress wounds", "Monitor and seek clinic for deep wounds", "Tetanus check if needed"],
+    "emergency": "Seek medical care for severe wounds.",
+    "fallback_protocol": "Low confidence → follow non-venomous care."
+  },
+
+  "Hebius parallelum": {
+    "venom_status": "non-venomous",
+    "description": "A natricine snake species; non-venomous and typically found in moist environments.",
+    "danger_level": "low",
+    "identification_tips": ["Parallel striping", "Moist habitat presence", "Slender body"],
+    "recommended_actions": ["Observe from distance", "Allow it to vacate", "Contact wildlife control if inside homes"],
+    "donts": ["Do not handle", "Don't provoke", "Do not use folk remedies"],
+    "first_aid": ["Clean any wounds", "Seek care for deep punctures", "Monitor for infection"],
+    "emergency": "Clinic evaluation for severe bites.",
+    "fallback_protocol": "Low confidence → treat as non-venomous with monitoring."
+  },
+
+  "Rhabdophis subminiatus": {
+    "venom_status": "venomous",
+    "description": "Red-necked keelback — has nuchal gland toxins and can cause severe reactions; medically important.",
+    "danger_level": "high",
+    "identification_tips": ["Distinctive red neck or nuchal patch in many specimens", "Keelback body shape", "Often found near water/vegetation"],
+    "recommended_actions": ["Avoid handling", "If bitten, keep patient calm and still", "Seek urgent medical attention"],
+    "donts": ["Do not incise or suck the wound", "Do not apply tourniquets", "Do not rely on traditional remedies"],
+    "first_aid": ["Calm and immobilize the patient", "Clean wound with water and cover", "Transport to hospital for observation and treatment"],
+    "emergency": "Medical evaluation required; toxin effects can be systemic.",
+    "fallback_protocol": "If model confidence low → err on side of caution; treat as potentially medically significant and seek care."
+  },
+
+  "Rhabdophis himalayanus": {
+    "venom_status": "venomous",
+    "description": "Himalayan keelback — may have medically relevant toxins in nuchal glands; precaution advised.",
+    "danger_level": "high",
+    "identification_tips": ["Keelback body with distinctive neck coloration", "Often semi-aquatic", "Head shape similar to other natricines"],
+    "recommended_actions": ["Keep distance and avoid contact", "Immobilize and seek medical care if bitten", "Remove tight clothing near bite site"],
+    "donts": ["Don't cut or attempt suction", "Do not apply tight tourniquets", "Avoid folk remedies"],
+    "first_aid": ["Keep patient calm", "Immobilize the limb", "Get to a medical facility promptly"],
+    "emergency": "Urgent medical assessment recommended due to toxin potential.",
+    "fallback_protocol": "If uncertain → follow high-risk protocol and seek immediate care."
+  },
+
+  "Rhabdophis nuchalis": {
+    "venom_status": "venomous",
+    "description": "A keelback species with potential nuchal gland toxins; manage as medically important.",
+    "danger_level": "high",
+    "identification_tips": ["Neck patch or nuchal glands visible in some specimens", "Keelback form", "Semi-aquatic habitat preference"],
+    "recommended_actions": ["Avoid handling", "If bitten keep patient calm and immobilized", "Seek urgent medical care"],
+    "donts": ["Do not cut/suck wound", "No tourniquets", "Don't use home remedies"],
+    "first_aid": ["Immobilize limb, clean wound, cover with sterile dressing", "Remove nearby constricting items", "Transport to medical facility quickly"],
+    "emergency": "Medical care for possible systemic toxin effects.",
+    "fallback_protocol": "Model uncertainty → treat as medically significant and escalate to emergency services."
+  },
+
+  "Rhabdophis nigrocinctus": {
+    "venom_status": "venomous",
+    "description": "A keelback with potential nuchal gland toxins; may be medically relevant.",
+    "danger_level": "high",
+    "identification_tips": ["Distinctive dark banding or nuchal markings", "Keelback appearance", "Often near water/vegetation"],
+    "recommended_actions": ["Keep distance", "Immobilize patient if bitten", "Get medical attention promptly"],
+    "donts": ["Do not cut or attempt to suck venom", "Do not apply tourniquets", "Don't use unverified remedies"],
+    "first_aid": ["Calm and immobilize the limb", "Clean wound and cover", "Seek hospital care for observation and treatment"],
+    "emergency": "Urgent medical evaluation advised.",
+    "fallback_protocol": "If confidence low → assume high risk and seek medical care."
+  },
+
+  "Rhabdophis lineatus": {
+    "venom_status": "venomous",
+    "description": "Lineated keelback — nuchal gland toxins may cause serious reactions in some cases.",
+    "danger_level": "high",
+    "identification_tips": ["Distinct lines along body", "Keel-like scales", "Often near water"],
+    "recommended_actions": ["Avoid handling", "Immobilize and seek urgent care if bitten", "Keep patient calm"],
+    "donts": ["Do not cut or suck", "Do not tourniquet", "Don't delay professional care"],
+    "first_aid": ["Clean and cover bite", "Immobilize limb", "Transport to medical facility rapidly"],
+    "emergency": "Medical assessment required for systemic signs.",
+    "fallback_protocol": "Low confidence → treat as potentially medically significant."
+  },
+
+  "Rhabdophis chrysargos": {
+    "venom_status": "venomous",
+    "description": "Keelback species with potentially harmful nuchal gland secretions; treat cautiously.",
+    "danger_level": "high",
+    "identification_tips": ["Notable neck markings", "Keelback body", "Semi-aquatic habitats"],
+    "recommended_actions": ["Avoid contact", "Immobilize patient if bitten", "Seek urgent medical care"],
+    "donts": ["Don't cut or suck wound", "No tourniquets", "Do not attempt home remedies"],
+    "first_aid": ["Keep patient calm", "Immobilize and cover wound", "Move to hospital quickly"],
+    "emergency": "Prompt medical attention recommended.",
+    "fallback_protocol": "If uncertain → follow high-risk protocol and seek hospital care."
+  },
+
+  "Rhabdophis helleri": {
+    "venom_status": "venomous",
+    "description": "Keelback species that may present envenomation via nuchal glands; handle with care.",
+    "danger_level": "high",
+    "identification_tips": ["Distinctive color patterns and neck region", "Keelback type", "Found near vegetation/wetlands"],
+    "recommended_actions": ["Avoid handling", "Calm and immobilize patient if bitten", "Seek immediate medical assessment"],
+    "donts": ["Do not incise or suck wound", "Do not apply tourniquets", "Do not use unsafe remedies"],
+    "first_aid": ["Immobilize limb", "Clean and dress bite", "Transport to healthcare facility promptly"],
+    "emergency": "Urgent medical care advised.",
+    "fallback_protocol": "If model uncertain → err on caution and seek medical help."
+  },
+
+  "Elaphe taeniura": {
+    "venom_status": "non-venomous",
+    "description": "Beauty rat snake / banded racer — non-venomous colubrid often with attractive banding.",
+    "danger_level": "low",
+    "identification_tips": ["Distinct dorsal banding", "Slender body", "Non-venomous head shape"],
+    "recommended_actions": ["Observe and allow escape", "Block entry points to homes", "Contact wildlife services if needed"],
+    "donts": ["Do not handle without protection", "Do not provoke", "Don't kill it"],
+    "first_aid": ["Clean and dress any bite", "Seek clinic for deep bites", "Monitor for infection"],
+    "emergency": "Seek medical attention for serious wounds.",
+    "fallback_protocol": "Low confidence → treat as non-venomous but monitor patient."
+  },
+
+  "Oligodon albocinctus": {
+    "venom_status": "non-venomous",
+    "description": "Common kukri snake — small, generally non-venomous species with specialized teeth for eggs.",
+    "danger_level": "low",
+    "identification_tips": ["Small size, kukri-shaped teeth", "Distinctive head markings in some species", "Usually harmless to humans"],
+    "recommended_actions": ["Avoid handling", "Allow escape", "Keep children/pets away"],
+    "donts": ["Do not try to capture without tools", "Do not provoke", "Don't attempt home remedies for bites"],
+    "first_aid": ["Clean and dress minor wounds", "Monitor and seek clinic for deep bites", "Tetanus check if indicated"],
+    "emergency": "Medical care for deep punctures or infection.",
+    "fallback_protocol": "Low confidence → follow non-venomous guidance."
+  },
+
+  "Oligodon cinereus": {
+    "venom_status": "non-venomous",
+    "description": "A kukri snake species; generally non-venomous and small.",
+    "danger_level": "low",
+    "identification_tips": ["Small, slender body", "Distinctive head shape", "Egg-eating dentition"],
+    "recommended_actions": ["Do not handle", "Allow escape", "Contact wildlife control if in houses"],
+    "donts": ["Do not provoke", "Do not use folk remedies", "Don't try to feed or corner it"],
+    "first_aid": ["Wash and dress bite area", "Seek clinic for deep wounds", "Monitor for infection"],
+    "emergency": "Seek medical care for serious wounds.",
+    "fallback_protocol": "If uncertain → treat as non-venomous."
+  },
+
+  "Oligodon erythrorhachis": {
+    "venom_status": "non-venomous",
+    "description": "Kukri snake variant — small and mostly harmless.",
+    "danger_level": "low",
+    "identification_tips": ["Red-tinted dorsal stripe in some specimens", "Small size", "Non-venomous dentition"],
+    "recommended_actions": ["Give space", "Allow escape", "Keep children/pets safe"],
+    "donts": ["Do not handle", "Do not provoke", "Don't use unverified remedies"],
+    "first_aid": ["Clean and dress wounds", "Seek care for deep bites", "Observe for infection"],
+    "emergency": "Clinic care for severe wounds.",
+    "fallback_protocol": "Low confidence → follow conservative non-venomous measures."
+  },
+
+  "Oligodon taeniatus": {
+    "venom_status": "non-venomous",
+    "description": "Another kukri snake species; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Striped pattern", "Small slender body", "Typical kukri head shape"],
+    "recommended_actions": ["Avoid handling", "Let it go", "Inform wildlife services if necessary"],
+    "donts": ["Do not provoke", "Do not capture", "Don't use traditional remedies"],
+    "first_aid": ["Wash and dress bite", "Seek clinic for deep wounds", "Monitor for infection"],
+    "emergency": "Seek medical attention for serious wounds.",
+    "fallback_protocol": "Low confidence → treat as non-venomous and monitor."
+  },
+
+  "Oligodon dorsalis": {
+    "venom_status": "non-venomous",
+    "description": "Kukri snake species with dorsal patterning; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Dorsal markings", "Small size", "Kukri-style dentition"],
+    "recommended_actions": ["Avoid handling", "Allow escape", "Keep children and pets away"],
+    "donts": ["Do not try to capture bare-handed", "Do not provoke", "Do not use folk remedies"],
+    "first_aid": ["Clean and apply sterile dressing", "Seek care for deep wounds", "Monitor for infection"],
+    "emergency": "Medical care recommended for severe injuries.",
+    "fallback_protocol": "If model uncertain → conservative non-venomous care."
+  },
+
+  "Oligodon cyclurus": {
+    "venom_status": "non-venomous",
+    "description": "Kukri snake species, generally harmless to humans.",
+    "danger_level": "low",
+    "identification_tips": ["Cyclurus patterning", "Small slender body", "Egg-eating teeth"],
+    "recommended_actions": ["Do not handle", "Allow escape", "Contact wildlife services if needed"],
+    "donts": ["Do not provoke", "Do not capture without tools", "Don't use home remedies"],
+    "first_aid": ["Wash wound, sterile dressing", "Clinic for deep wounds", "Tetanus check if indicated"],
+    "emergency": "Seek care for significant wounds.",
+    "fallback_protocol": "Low confidence → follow non-venomous plan."
+  },
+
+  "Oligodon macrurus": {
+    "venom_status": "non-venomous",
+    "description": "Small kukri snake species; not dangerous to humans.",
+    "danger_level": "low",
+    "identification_tips": ["Small size", "Typical kukri head", "Distinctive markings on some specimens"],
+    "recommended_actions": ["Allow escape", "Keep pets/children away", "Contact wildlife help if indoors"],
+    "donts": ["Do not handle", "Do not provoke", "Don't apply traditional remedies"],
+    "first_aid": ["Clean wound and dress", "Seek medical review for deep wounds", "Monitor for infection"],
+    "emergency": "Medical attention for severe injuries.",
+    "fallback_protocol": "Low confidence → treat as non-venomous."
+  },
+
+  "Oligodon borneensis": {
+    "venom_status": "non-venomous",
+    "description": "Bornean kukri snake — generally harmless without systemic venom effects.",
+    "danger_level": "low",
+    "identification_tips": ["Regional markings", "Small slender body", "Egg-eating teeth"],
+    "recommended_actions": ["Give space", "Allow it to leave", "Keep children/pets safe"],
+    "donts": ["Do not attempt capture", "Do not provoke", "Do not use folk remedies"],
+    "first_aid": ["Clean and dress minor wounds", "Seek clinic for deep punctures", "Monitor recovery"],
+    "emergency": "Seek medical help for severe wounds.",
+    "fallback_protocol": "If uncertain → conservative non-venomous management."
+  },
+
+  "Oligodon mouhoti": {
+    "venom_status": "non-venomous",
+    "description": "A kukri snake species; small and typically harmless.",
+    "danger_level": "low",
+    "identification_tips": ["Small body", "Distinctive head shape", "Kukri-like teeth"],
+    "recommended_actions": ["Avoid handling", "Let it escape", "Contact wildlife services if needed"],
+    "donts": ["Don't provoke", "Don't attempt capture", "Don't use home remedies"],
+    "first_aid": ["Clean wound and bandage", "Seek clinic for deep wounds", "Tetanus check if necessary"],
+    "emergency": "Medical care for deep punctures or infection.",
+    "fallback_protocol": "Low confidence → follow non-venomous guidance."
+  },
+
+  "Oligodon nagaensis": {
+    "venom_status": "non-venomous",
+    "description": "Kukri snake from Naga region; non-venomous and small.",
+    "danger_level": "low",
+    "identification_tips": ["Local patterning", "Small size", "Slender body"],
+    "recommended_actions": ["Let it go", "Avoid capturing", "Keep safe distance"],
+    "donts": ["Do not handle", "Do not provoke", "Don't apply folk remedies"],
+    "first_aid": ["Wash and dress wounds", "Seek clinic if deep", "Monitor for infection"],
+    "emergency": "Seek medical attention for severe wounds.",
+    "fallback_protocol": "If uncertain → follow non-venomous measures."
+  },
+
+  "Oligodon planiceps": {
+    "venom_status": "non-venomous",
+    "description": "Small kukri snake with flat head; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Flat head profile", "Small size", "Typical kukri features"],
+    "recommended_actions": ["Do not handle", "Allow escape", "Keep areas secure for children/pets"],
+    "donts": ["Do not provoke", "Do not try to kill", "Don't attempt wildlife removal without help"],
+    "first_aid": ["Clean and dress wound", "Seek medical review for deep wounds", "Monitor for infection"],
+    "emergency": "Clinic visit for severe punctures.",
+    "fallback_protocol": "Low confidence → treat as non-venomous."
+  },
+
+  "Oligodon saiyok": {
+    "venom_status": "non-venomous",
+    "description": "A kukri snake species; non-venomous and small.",
+    "danger_level": "low",
+    "identification_tips": ["Local patterning and small size", "Slender body", "Non-venomous dentition"],
+    "recommended_actions": ["Give space", "Allow escape", "Contact wildlife services if indoors"],
+    "donts": ["Do not handle", "Do not provoke", "Do not use home remedies for bites"],
+    "first_aid": ["Wash and dress wound", "Seek medical care for deep/infected wounds", "Tetanus check if needed"],
+    "emergency": "Seek medical attention for serious wounds.",
+    "fallback_protocol": "Low confidence → follow conservative non-venomous care."
+  },
+
+  "Oligodon fasciolatus": {
+    "venom_status": "non-venomous",
+    "description": "Another kukri snake species with banded pattern; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Banded dorsal markings", "Small size", "Kukri teeth specialized for eggs"],
+    "recommended_actions": ["Allow it to depart", "Do not handle", "Keep children away"],
+    "donts": ["Do not provoke", "Don't capture", "Don't use unverified remedies"],
+    "first_aid": ["Clean and cover any bite", "Seek clinic for deep wounds", "Monitor for infection"],
+    "emergency": "Medical care for severe wounds.",
+    "fallback_protocol": "If uncertain → treat as non-venomous."
+  },
+
+  "Oligodon sublineatus": {
+    "venom_status": "non-venomous",
+    "description": "Kukri snake species; typically harmless to humans.",
+    "danger_level": "low",
+    "identification_tips": ["Subtle dorsal lines", "Small body", "Typical kukri head"],
+    "recommended_actions": ["Observe then allow escape", "Do not handle", "Contact wildlife rescue if indoors"],
+    "donts": ["Do not provoke", "Do not use folk treatments", "Avoid capture attempts"],
+    "first_aid": ["Wash and bandage wound", "Seek clinic for deep wounds", "Monitor infection signs"],
+    "emergency": "Seek medical care if wound severe.",
+    "fallback_protocol": "Low confidence → follow non-venomous guidance."
+  },
+
+  "Oligodon pulcherrimus": {
+    "venom_status": "non-venomous",
+    "description": "A beautifully patterned kukri snake species; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Attractive dorsal patterns", "Small, slender body", "Kukri-type teeth"],
+    "recommended_actions": ["Allow escape", "Avoid handling", "Keep area clear of children/pets"],
+    "donts": ["Do not pick up", "Do not provoke", "Don't use unsafe remedies"],
+    "first_aid": ["Clean wound, apply dressing", "Seek medical assessment for deep wounds", "Monitor for infection"],
+    "emergency": "Clinic for severe bites.",
+    "fallback_protocol": "If model uncertain → conservative non-venomous care."
+  },
+
+  "Oligodon splendidus": {
+    "venom_status": "non-venomous",
+    "description": "Splendid kukri snake species; non-venomous and generally harmless.",
+    "danger_level": "low",
+    "identification_tips": ["Bright markings in some specimens", "Small size", "Kukri teeth"],
+    "recommended_actions": ["Do not handle", "Allow escape", "Contact wildlife control if indoors"],
+    "donts": ["Do not provoke", "Don't attempt capture", "Do not use home remedies"],
+    "first_aid": ["Wash and dress wound", "Seek clinic for deep wounds", "Monitor recovery"],
+    "emergency": "Medical care for severe injuries.",
+    "fallback_protocol": "Low confidence → treat as non-venomous."
+  },
+
+  "Oligodon inornatus": {
+    "venom_status": "non-venomous",
+    "description": "Plain kukri snake species; small and non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Plain coloration", "Small size", "Kukri-like features"],
+    "recommended_actions": ["Allow to escape", "Do not handle", "Keep children away"],
+    "donts": ["Do not provoke", "Do not capture", "Don't use unproven remedies"],
+    "first_aid": ["Clean and dress wounds", "Seek clinic for deep punctures", "Tetanus check if needed"],
+    "emergency": "Medical care if severe.",
+    "fallback_protocol": "Low confidence → follow non-venomous protocol."
+  },
+
+  "Oligodon joynsoni": {
+    "venom_status": "non-venomous",
+    "description": "A small kukri snake species; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Local patterning", "Small, slender body", "Kukri-like head"],
+    "recommended_actions": ["Let it leave", "Avoid handling", "Call wildlife services if indoors"],
+    "donts": ["Do not provoke", "Do not capture", "Avoid home remedies"],
+    "first_aid": ["Clean and apply sterile dressing", "Seek medical care for deep wounds", "Monitor for infection"],
+    "emergency": "Seek clinic for significant injuries.",
+    "fallback_protocol": "Low confidence → treat as non-venomous."
+  },
+
+  "Oligodon tchaikovskyi": {
+    "venom_status": "non-venomous",
+    "description": "Kukri snake species named recently; non-venomous in human context.",
+    "danger_level": "low",
+    "identification_tips": ["Species-specific markings", "Small slender body", "Kukri tooth form"],
+    "recommended_actions": ["Do not handle", "Allow escape", "Ensure children/pets kept away"],
+    "donts": ["Do not provoke", "Don't use folk remedies", "Do not attempt capture"],
+    "first_aid": ["Wash and dress wound", "Seek clinic for deep wounds", "Monitor for infection"],
+    "emergency": "Clinic for severe bites.",
+    "fallback_protocol": "If uncertain → conservative non-venomous management."
+  },
+
+  "Oligodon nagaoensis": {
+    "venom_status": "non-venomous",
+    "description": "Relatively small kukri snake species; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Local patterning", "Small size", "Typical kukri head"],
+    "recommended_actions": ["Allow to leave", "Do not handle", "Contact wildlife control if indoors"],
+    "donts": ["Do not provoke", "Don't capture", "Avoid untested remedies"],
+    "first_aid": ["Clean and bandage bite", "Seek care for deep wounds", "Tetanus check if indicated"],
+    "emergency": "Seek medical care for deep punctures.",
+    "fallback_protocol": "Low confidence → treat as non-venomous."
+  },
+
+  "Oligodon tormentor": {
+    "venom_status": "non-venomous",
+    "description": "A kukri snake species; small and not systemically venomous to humans.",
+    "danger_level": "low",
+    "identification_tips": ["Species-specific markings", "Small size", "Kukri teeth"],
+    "recommended_actions": ["Keep distance", "Allow escape", "Contact wildlife services if necessary"],
+    "donts": ["Do not handle", "Do not provoke", "Don't use traditional remedies"],
+    "first_aid": ["Wash and cover bite", "Seek clinic for deep wounds", "Monitor for infection"],
+    "emergency": "Medical care for severe wounds.",
+    "fallback_protocol": "If uncertain → conservative non-venomous protocol."
+  },
+
+  "Oligodon juglandifer": {
+    "venom_status": "non-venomous",
+    "description": "Kukri snake species; non-venomous for human concerns.",
+    "danger_level": "low",
+    "identification_tips": ["Distinctive dorsal markings", "Small body size", "Kukri head"],
+    "recommended_actions": ["Do not handle", "Allow it to escape", "Keep children/pets safe"],
+    "donts": ["Don't provoke", "Do not attempt capture", "Don't use home remedies"],
+    "first_aid": ["Clean and dress wounds", "Seek clinic for deep or infected wounds", "Tetanus check if required"],
+    "emergency": "Seek medical care for serious injuries.",
+    "fallback_protocol": "Low confidence → treat as non-venomous."
+  },
+
+  "Oligodon torquatus": {
+    "venom_status": "non-venomous",
+    "description": "Kukri snake with neck banding; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Neck band (torquate) markings", "Small size", "Kukri features"],
+    "recommended_actions": ["Allow escape", "Avoid handling", "Secure living areas if frequent sightings"],
+    "donts": ["Do not provoke", "Don't attempt capture", "Avoid folk remedies"],
+    "first_aid": ["Wash and cover bite", "Seek clinic for deep wounds", "Monitor for infection"],
+    "emergency": "Medical review for severe wounds.",
+    "fallback_protocol": "Low confidence → conservative non-venomous measures."
+  },
+
+  "Oligodon annulifer": {
+    "venom_status": "non-venomous",
+    "description": "Ringed kukri snake species; non-venomous.",
+    "danger_level": "low",
+    "identification_tips": ["Annular ring patterning", "Small, slender body", "Kukri tooth form"],
+    "recommended_actions": ["Give it space", "Do not handle", "Allow it to return to habitat"],
+    "donts": ["Do not provoke or capture", "Do not apply unverified remedies", "Don't kill it"],
+    "first_aid": ["Clean and dress wounds", "Seek clinic for significant injuries", "Monitor for infection"],
+    "emergency": "Clinic for severe punctures or infection.",
+    "fallback_protocol": "Low confidence → treat as non-venomous and monitor."
+  },
+
+  "Coelognathus radiatus": {
+    "venom_status": "non-venomous",
+    "description": "Radiated rat snake — non-venomous and often found in agricultural areas.",
+    "danger_level": "low",
+    "identification_tips": ["Radiating dorsal pattern", "Slender body", "Diurnal and fast-moving"],
+    "recommended_actions": ["Allow escape", "Avoid handling", "Secure living spaces if necessary"],
+    "donts": ["Do not provoke", "Don't attempt capture without tools", "Do not kill it unnecessarily"],
+    "first_aid": ["Clean and dress any bite", "Seek clinic for deep wounds", "Monitor for infection"],
+    "emergency": "Medical care for serious wounds.",
+    "fallback_protocol": "Low confidence → conservative non-venomous care."
+  },
+
+  "Coelognathus flavolineatus": {
+    "venom_status": "non-venomous",
+    "description": "Striped or golden-lined rat snake — non-venomous and fast-moving.",
+    "danger_level": "low",
+    "identification_tips": ["Distinctive lateral stripe", "Slender body", "Active during day"],
+    "recommended_actions": ["Do not handle", "Allow escape", "Contact wildlife services if inside home"],
+    "donts": ["Do not provoke or corner", "Don't kill", "Avoid home remedies for bites"],
+    "first_aid": ["Clean and cover bite", "Seek clinic for deep wounds", "Tetanus check if indicated"],
+    "emergency": "Seek medical care for significant injuries.",
+    "fallback_protocol": "Low confidence → treat as non-venomous and monitor."
+  },
+
+  "Coelognathus helena": {
+    "venom_status": "non-venomous",
+    "description": "Common name: trinket snake/beauty rat snake — non-venomous colubrid.",
+    "danger_level": "low",
+    "identification_tips": ["Distinctive banding or pattern", "Slender body", "Active daytime behavior"],
+    "recommended_actions": ["Allow to leave area", "Do not handle", "Keep children/pets away"],
+    "donts": ["Don't provoke", "Do not attempt capture without protection", "Don't use folk remedies"],
+    "first_aid": ["Clean and apply sterile dressing", "Seek clinic for deep wounds", "Monitor for infection"],
+    "emergency": "Clinic evaluation for deep or infected wounds.",
+    "fallback_protocol": "If uncertain → follow non-venomous protocol."
+  },
+
+  "Psammodynastes pulverulentus": {
+    "venom_status": "mildly venomous",
+    "description": "Mock viper or similar — small rear-fanged species; mild to moderate local effects possible.",
+    "danger_level": "moderate",
+    "identification_tips": ["Stout small body, sometimes viper-like appearance", "Keeled scales in some", "Found in leaf litter/ground"],
+    "recommended_actions": ["Avoid handling", "Allow it to leave", "Seek medical advice if bitten"],
+    "donts": ["Do not attempt to capture", "Do not use unproven remedies", "Don't ignore progressive symptoms"],
+    "first_aid": ["Wash wound and cover", "Immobilize if necessary", "See healthcare provider for wound assessment"],
+    "emergency": "Medical assessment for symptomatic bites.",
+    "fallback_protocol": "If confidence low → recommend clinic visit and conservative measures."
+  },
+
+  "Psammodynastes pictus": {
+    "venom_status": "mildly venomous",
+    "description": "A painted mock viper-like species with possible mild envenomation effects.",
+    "danger_level": "moderate",
+    "identification_tips": ["Distinctive painted pattern", "Small stout body", "Terrestrial habits"],
+    "recommended_actions": ["Do not handle", "Observe and allow escape", "Seek medical review if bitten"],
+    "donts": ["Do not provoke", "Don't apply folk remedies", "Don't delay medical advice for worsening signs"],
+    "first_aid": ["Clean and dress bite", "Immobilize limb as needed", "Consult clinic for wound management"],
+    "emergency": "Medical evaluation advised if symptoms develop.",
+    "fallback_protocol": "Low confidence → treat cautiously and refer to healthcare."
+  },
+
+  "Psammodynastes foxi": {
+    "venom_status": "mildly venomous",
+    "description": "A lesser-known mock viper species; may cause local effects in some cases.",
+    "danger_level": "moderate",
+    "identification_tips": ["Terrestrial small body", "Distinctive markings", "Non-typical viper head shape"],
+    "recommended_actions": ["Keep distance", "Allow to flee", "Seek medical care if bitten"],
+    "donts": ["Do not attempt capture", "Do not try folk treatments", "Don't provoke the snake"],
+    "first_aid": ["Wash and cover wound", "Immobilize if necessary", "Get medical review for wound care"],
+    "emergency": "Medical check-up for symptomatic bites.",
+    "fallback_protocol": "If uncertain → conservative management with clinic referral."
+  },
+
+  "Psammodynastes taeniatus": {
+    "venom_status": "mildly venomous",
+    "description": "A mock viper-like species with local envenomation potential.",
+    "danger_level": "moderate",
+    "identification_tips": ["Striped or banded body", "Terrestrial", "Small to medium size"],
+    "recommended_actions": ["Avoid handling", "Keep others away", "Seek medical attention if bitten"],
+    "donts": ["Do not cut or suck wound", "Do not apply tight tourniquets", "Avoid home remedies"],
+    "first_aid": ["Clean wound and bandage", "Immobilize limb", "Transport to医 clinic if symptoms worsen"],
+    "emergency": "Medical evaluation for symptomatic bites.",
+    "fallback_protocol": "Low confidence → recommend clinic visit and observation."
   }
 }

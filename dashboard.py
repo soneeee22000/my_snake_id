@@ -5,6 +5,27 @@ import json
 import numpy as np
 from PIL import Image
 
+# -------------------------
+# FULL SCREEN MODE
+# -------------------------
+st.set_page_config(layout="wide")
+font = "source-sans-pro, sans-serif"
+
+# Set background color
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #FFFFE0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+
+
 # Load ONNX model
 sess = ort.InferenceSession("artifacts/model_fp32.onnx", providers=["CPUExecutionProvider"])
 
@@ -22,86 +43,103 @@ with open(SAFETY_PATH, "r") as f:
 
 
 def preprocess(img, size=320):
-    # Ensure RGB
     img = img.convert("RGB")
-
-    # Resize
     img = img.resize((size, size))
-
-    # Convert to numpy (H, W, C)
     arr = np.array(img).astype("float32") / 255.0
 
-    # Normalize
-    mean = np.array([0.485, 0.456, 0.406]).reshape(1,1,3)
-    std  = np.array([0.229, 0.224, 0.225]).reshape(1,1,3)
+    mean = np.array([0.485, 0.456, 0.406]).reshape(1, 1, 3)
+    std = np.array([0.229, 0.224, 0.225]).reshape(1, 1, 3)
     arr = (arr - mean) / std
 
-    # HWC -> CHW
-    arr = np.transpose(arr, (2,0,1))
-
-    # Add batch dimension -> (1,3,H,W)
+    arr = np.transpose(arr, (2, 0, 1))
     arr = arr[np.newaxis, :, :, :]
-
     return arr.astype(np.float32)
 
 
 def predict(img):
     x = preprocess(img)
-
-    # ONNX inference
     logits = sess.run(["logits"], {"input": x})[0]
 
-    # Softmax
     probs = np.exp(logits) / np.exp(logits).sum(axis=1, keepdims=True)
-
-    # Highest probability
     idx = int(np.argmax(probs))
+
     return idx, float(probs[0, idx])
 
 
-# Streamlit UI
-st.title("🐍 Snake Safety Advisor")
-st.write("Upload an image of a snake to get identification and Burmese safety tips.")
+# ----------------------------------------------------------
+#   TWO-PAGE BOOK LAYOUT
+# ----------------------------------------------------------
 
-img_file = st.file_uploader("Upload an image", type=["jpg","jpeg","png"])
+LEFT, RIGHT = st.columns([1.1, 1.4], gap="large")
 
-if img_file:
-    img = Image.open(img_file).convert("RGB")
-    st.image(img, caption="Uploaded image", use_container_width=True)
+# --------------------------
+# LEFT PAGE (Title + upload + image)
+# --------------------------
+with LEFT:
 
-    idx, prob = predict(img)
-    species = idx_to_class[idx]
+    st.title("🐍 Snake Safety Advisor")
+    st.write("Upload an image of a snake to get identification and Burmese safety tips.")
 
-    st.subheader(f"Prediction: **{species}**")
-    st.write(f"Confidence: **{prob:.2f}**")
+    img_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
-    # safety lookup
-    # Normalize species output
-    species_normalized = species.replace("_"," ").replace("-"," ").title()
+    # Show placeholder before upload
+    if not img_file:
+        st.write("### ")
+        st.write("Upload an image to display it here.")
+        img = None
 
-    # Normalize JSON keys as well
-    safety_data_norm = {
-        k.replace("_"," ").replace("-"," ").title(): v
-        for k, v in safety_data.items()
-    }
-
-    # Lookup
-    tips = safety_data_norm.get(species_normalized)
+    if img_file:
+        img = Image.open(img_file).convert("RGB")
+        st.image(img, caption="Uploaded image", use_container_width=True)
 
 
-    if tips:
-        st.markdown("### 🛡 Burmese Safety Guidance")
-        st.write(tips["description"])
-        st.write("#### ✔ First aid / What to do")
-        for step in tips["actions"]:
-            st.write(f"- {step}")
+# --------------------------
+# RIGHT PAGE (Prediction + Safety Info)
+# --------------------------
 
-        st.write("#### ❌ What NOT to do")
-        for step in tips["donts"]:
-            st.write(f"- {step}")
+with RIGHT:
 
-        st.write("#### 🚑 Emergency Steps")
-        st.write(tips["emergency"])
+    if img_file:
+
+        idx, prob = predict(img)
+        species = idx_to_class[idx]
+
+        st.subheader(f"Prediction: **{species}**")
+        st.write(f"Confidence: **{prob:.2f}**")
+
+        # Normalize species
+        species_normalized = species.replace("_", " ").replace("-", " ").title()
+
+        safety_data_norm = {
+            k.replace("_", " ").replace("-", " ").title(): v
+            for k, v in safety_data.items()
+        }
+
+        tips = safety_data_norm.get(species_normalized)
+
+        if tips:
+            st.subheader("Burmese Safety Guidance")
+
+            st.info(f"**Venom Status:** {tips['venom_status']}\n\n**Description:** {tips['description']}\n\n**Danger Level:** {tips['danger_level']}")
+
+            st.subheader("What to do")
+            for step in tips["identification_tips"]:
+                st.write(f"- {step}")
+            for step in tips["recommended_actions"]:
+                st.write(f"- {step}")
+
+            st.subheader("What NOT to do")
+            for step in tips["donts"]:
+                st.write(f"- {step}")
+            for step in tips["first_aid"]:
+                st.write(f"- {step}")
+
+            st.subheader("Emergency Steps")
+            st.write(tips["emergency"])
+            st.write(tips["fallback_protocol"])
+
+        else:
+            st.warning("No safety information available for this species.")
 
     else:
-        st.warning("No safety information available for this species.")
+        st.info("Prediction and safety tips will appear here after you upload an image.")

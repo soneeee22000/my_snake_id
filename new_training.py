@@ -1,9 +1,3 @@
-# current version of snake safety/train_cpu.py (using)
-# using data/images and artifacts(generated after training)
-# using tools folder for image fatching and processing
-# dashborad.py for streamlit app
-# safety cards need to be generated in json format
-
 import argparse, json, os, random, time
 import numpy as np
 import torch
@@ -218,7 +212,7 @@ def main():
     onnx_path = os.path.join(args.out_dir, "model_fp32.onnx")
     torch.onnx.export(model, dummy, onnx_path, input_names=["input"], output_names=["logits"], opset_version=17, dynamic_axes={"input":{0:"batch"}, "logits":{0:"batch"}})
     print("Exported:", onnx_path)
-
+        
     """ --- Quantize to INT8 (Activated) ---
     try:
         from onnxruntime.quantization import quantize_dynamic, QuantType
