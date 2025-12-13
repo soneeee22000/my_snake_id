@@ -1,0 +1,13 @@
+# Virtual environment
+venv/
+.venv/
+ENV/
+env/
+data/
+
+# Ignore everything inside artifacts except ONNX model
+artifacts/*
+!artifacts/*.onnx
+
+# Python cache
+__pycache__/

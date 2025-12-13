@@ -1,4 +1,4 @@
-
+# previous content of train_cpu.py
 import argparse, json, os, random, time
 import numpy as np
 import torch
@@ -160,13 +160,21 @@ def main():
     print("Exported:", onnx_path)
 
     # Quantize to INT8
+    """
     try:
         from onnxruntime.quantization import quantize_dynamic, QuantType
         int8_path = os.path.join(args.out_dir, "model_int8.onnx")
         quantize_dynamic(model_input=onnx_path, model_output=int8_path, weight_type=QuantType.QInt8)
         print("Quantized:", int8_path)
     except Exception as e:
-        print("Quantization failed:", e)
+        print("Quantization failed:", e)"""
+    #try:
+    #    from onnxruntime.quantization import quantize_dynamic, QuantType
+    #    int8_path = os.path.join(args.out_dir, "model_int8.onnx")
+    #    quantize_dynamic(model_input=onnx_path, model_output=int8_path, weight_type=QuantType.QInt8)
+    #    print("Quantized:", int8_path)
+    #except Exception as e:
+    #    print("Quantization failed:", e)
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-# Snake ID – Myanmar (CPU-only MVP)
+# Snake ID Identification(CPU-only MVP)
 
 This is a minimal, **CPU-only** snake identifier for Myanmar. It classifies a photo into a small set of species and returns Burmese safety guidance with conservation-first language.
 
@@ -28,13 +28,13 @@ This is a minimal, **CPU-only** snake identifier for Myanmar. It classifies a ph
 
 3. (Optional) Use the downloader to fetch CC images from iNaturalist by species list:
    ```bash
-   python tools/download_inat.py --species_csv data/species_list.csv --out_dir data/raw_inat --license CC-BY,CC0
+   python tools/download_inat.py --species_csv data/species_list.csv --out_dir data/raw_inat
    python tools/prepare_dataset.py --raw_dir data/raw_inat --out_dir data/images
    ```
 
 4. Train and export a compact CPU model:
    ```bash
-   python train_cpu.py --data_dir data/images --out_dir artifacts --arch mobilenetv3_small --epochs 8
+   python new_training.py --data_dir data/processed --out_dir artifacts --arch mobilenetv3_small --epochs 20
    ```
 
    This will:
@@ -43,17 +43,13 @@ This is a minimal, **CPU-only** snake identifier for Myanmar. It classifies a ph
    - quantize to INT8 (`artifacts/model_int8.onnx`)
    - save label map (`artifacts/class_map.json`)
 
-5. Run the FastAPI server:
+5. Run the streamlit server:
    ```bash
-   uvicorn app.main:app --reload --port 8000
+      streamlit run dashboard.py
    ```
-   Open http://127.0.0.1:8000 in your browser (Burmese UI).
+   Open http://127.0.0.1:8000 in your browser.
 
-## Burmese Safety Messaging
+## Safety Messaging
 
-Safety cards are in `app/safety_cards/mm.json` and can be edited by community experts. All bite events: **seek medical care immediately**.
+Safety cards are in `app/safety_cards/en.json` and can be edited by community experts. All bite events: **seek medical care immediately**.
 
-## Notes
-
-- This MVP targets 8 classes to keep it small. You can add more classes once you have enough data.
-- Use only CC-licensed images and keep attribution (iNaturalist/Wikimedia). See `data/ATTRIBUTION.csv`.
