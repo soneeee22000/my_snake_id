@@ -213,14 +213,5 @@ def main():
     torch.onnx.export(model, dummy, onnx_path, input_names=["input"], output_names=["logits"], opset_version=17, dynamic_axes={"input":{0:"batch"}, "logits":{0:"batch"}})
     print("Exported:", onnx_path)
         
-    # --- Quantize to INT8 ---
-    try:
-        from onnxruntime.quantization import quantize_dynamic, QuantType
-        int8_path = os.path.join(args.out_dir, "model_int8.onnx")
-        # Dynamic quantization is suitable for model inference on CPU
-        quantize_dynamic(model_input=onnx_path, model_output=int8_path, weight_type=QuantType.QInt8)
-        print("Quantized to INT8:", int8_path)
-    except Exception as e:
-        print(f"Quantization failed (check onnxruntime installation): {e}")
 if __name__ == "__main__":
     main()

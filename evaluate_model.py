@@ -85,5 +85,4 @@ def main():
     plt.show()
 
 if __name__ == "__main__":
-    main()</content>
-<parameter name="filePath">c:\snake_id\my_snake_id\evaluate_model.py
+    main()
